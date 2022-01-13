@@ -139,3 +139,112 @@ CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
 CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/2'
 CELERY_ENABLE_UTC = False
 CELERY_TIMEZONE = 'Asia/Shanghai'
+
+"""
+Simple UI settings
+"""
+SIMPLEUI_HOME_TITLE = 'Sadb资产与配置中心'
+SIMPLEUI_HOME_INFO = True
+SIMPLEUI_LOGO = '/static/admin/simpleui-x/img/logo.png'
+SIMPLEUI_LOGIN_PARTICLES = True
+SIMPLEUI_HOME_ICON = 'fa fa-user'
+SIMPLEUI_DEFAULT_THEME = 'Simpleui-x.css'
+SIMPLEUI_ANALYSIS = False         # 不提交分析
+SIMPLEUI_STATIC_OFFLINE = True    # simpleui 是否以脱机模式加载静态资源
+SIMPLEPRO_INFO = False # 不显示激活信息
+SIMPLEPRO_CHART_DISPLAY = False      # 配置Simple Pro是否显示首页的图标，默认为True，显示图表，False不显示
+SIMPLEUI_HOME_ACTION = True
+# SIMPLEUI_DEFAULT_ICON = False   # 不使用默认图标
+SIMPLEUI_CONFIG = {
+    'system_keep': True,
+    'menu_display': ['项目管理', '扫描管理', '资产管理', '漏洞管理', '扫描引擎', '日志管理', '认证和授权'],      # 开启排序和过滤功能, 不填此字段为默认排序和全部显示, 空列表[] 为全部不显示.
+    'menus': [{
+        'app': 'targetApp',
+        'name': '项目管理',
+        'icon': 'fab fa-battle-net',
+        'models': [{
+            'name': '项目管理',
+            'url': 'targetApp/project/',
+            'icon': 'fas fa-cookie-bite'
+            }, {
+            'name': '目标管理',
+            'url': 'targetApp/target/',
+            'icon': 'fas fa-glasses'
+            }]
+        },
+        {
+            'name': '扫描管理',
+            'url': 'scans/scans/',
+            'icon': 'fas fa-anchor'
+        },
+        {
+            'name': '扫描引擎',
+            'url': 'scanEngine/enginetype/',
+            # 'icon': 'fas fa-anchor'
+            'icon': 'fab fa-d-and-d'
+        }, {
+        'app': 'assets',
+        'name': '资产管理',
+        'icon': 'fas fa-feather',
+        'models': [{
+            'name': '子域名',
+            'url': 'assets/subdomain/',
+            'icon': 'fab fa-apple'
+        },{
+            'name': 'IP资产',
+            'url': 'assets/ip/',
+            'icon': 'fas fa-skull-crossbones'
+        },{
+            'name': 'C段情报',
+            'url': 'assets/ipc/',
+            'icon': 'fas fa-skull-crossbones'
+        },{
+            'name': '端口服务',
+            'url': 'assets/port/',
+            'icon': 'fab fa-affiliatetheme'
+        },{
+            'name': 'web应用',
+            'url': 'assets/webapp/',
+            'icon': 'fas fa-dove'
+        }, {
+            'name': '黑名单资产',
+            'url': 'assets/blockassets/',
+            'icon': 'fas fa-times-circle'
+            }
+        ]
+    }, {
+        'app': 'vulnerability',
+        'name': '漏洞管理',
+        'icon': 'fas fa-user-secret',
+        'models': [
+            {
+            'name': '文件指纹',
+            'url': 'assets/fileleak/',
+            'icon': 'fas fa-cat'
+            }, {
+            'name': 'URL爬虫',
+            'url': 'assets/crawlerurl/',
+            'icon': 'fas fa-spider'
+            }, {
+            'name': '主动扫描',
+            'url': 'assets/nuclei/',
+            'icon': 'fas fa-dragon'
+            }, {
+            'name': '被动扫描',
+            'url': 'assets/rad2xray/',
+            'icon': 'fas fa-frog'
+            }
+        ]
+        },{
+        'app': 'log',
+        'name': '日志管理',
+        'icon': 'fab fa-btc',
+        'models': [
+            {
+            'name': 'Celery监控',
+            'url': 'http://127.0.0.1:5555/',
+            'icon': 'fas fa-skiing'
+            }]
+        }
+    ]
+}
