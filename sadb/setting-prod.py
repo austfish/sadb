@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.assets.apps.AssetsConfig',
+    'apps.events.apps.EventsConfig',
+    'apps.tasks.apps.TasksConfig',
+    'apps.vulns.apps.VulnsConfig',
+    'apps.projects.apps.ProjectsConfig',
+    'celery',
+    'import_export',
 ]
 
 MIDDLEWARE = [
